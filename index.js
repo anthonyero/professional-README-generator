@@ -57,12 +57,58 @@ const questions = [
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
 
+function constructREADME(data) {
+    const generatedREADME = `
+    # ${data.projectTitle}
+
+    ## Description
+
+    ${data.description}
+
+    ## Table of Contents
+
+    - [Installation](#installation)
+    - [Usage](#usage)
+    - [Contributing](#contributing)
+    - [Tests)(#testinstructions)
+    - [License](#license)
+    - [Questions](#questions)
+    
+    ## Installation
+
+    ${data.installation}
+
+    ## Usage
+
+    ${data.usage}
+
+    ## Contributing
+
+    ${data.contribution}
+
+    ## Tests
+
+    ${data.testInstructions}
+
+    ## License
+
+    ${data.license}
+
+    ## Questions
+
+    If you have any additional questions, please feel free to [contact me](mailto:${data.email}). You can also access my [GitHub Profile](https://github.com/${data.githubUsername})
+    `
+    return generatedREADME
+}
+
 // TODO: Create a function to initialize app
 function init() {
     inquirer
     .prompt(questions)
     .then((response) => {
-        writeToFile('professional-README.md', response);
+        const generatedREADME = constructREADME(response);
+        console.log(generatedREADME);
+        writeToFile('professional-README.md', generatedREADME);
     })
 
 }
