@@ -62,7 +62,7 @@ function init() {
     inquirer
     .prompt(questions)
     .then((response) => {
-        
+        writeToFile('professional-README.md', response);
     })
 
 }
