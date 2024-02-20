@@ -55,49 +55,50 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, (err) => 
+    err ? console.error(err) : console.log("Your professional README.md file has been exported!"))
+}
 
 function constructREADME(data) {
-    const generatedREADME = `
-    # ${data.projectTitle}
+    const generatedREADME = `# ${data.projectTitle}
 
-    ## Description
+## Description
 
-    ${data.description}
+${data.description}
 
-    ## Table of Contents
+## Table of Contents
 
-    - [Installation](#installation)
-    - [Usage](#usage)
-    - [Contributing](#contributing)
-    - [Tests)(#testinstructions)
-    - [License](#license)
-    - [Questions](#questions)
-    
-    ## Installation
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [License](#license)
+- [Questions](#questions)
 
-    ${data.installation}
+## Installation
 
-    ## Usage
+${data.installation}
 
-    ${data.usage}
+## Usage
 
-    ## Contributing
+${data.usage}
 
-    ${data.contribution}
+## Contributing
 
-    ## Tests
+${data.contribution}
 
-    ${data.testInstructions}
+## Tests
 
-    ## License
+${data.testInstructions}
 
-    ${data.license}
+## License
 
-    ## Questions
+${data.license}
 
-    If you have any additional questions, please feel free to [contact me](mailto:${data.email}). You can also access my [GitHub Profile](https://github.com/${data.githubUsername})
-    `
+## Questions
+
+If you have any additional questions, please feel free to [contact me](mailto:${data.email}). You can also access my [GitHub Profile](https://github.com/${data.githubUsername})`
     return generatedREADME
 }
 
