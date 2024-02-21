@@ -1,8 +1,6 @@
-// TODO: Include packages needed for this application
 const fs = require("fs");
 const inquirer = require("inquirer");
 
-// TODO: Create an array of questions for user input
 const questions = [
     {
         type: "input",
@@ -54,14 +52,15 @@ const questions = [
     }
 ];
 
-// TODO: Create a function to write README file
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) => 
     err ? console.error(err) : console.log("Your professional README.md file has been exported!"))
 }
 
 function constructREADME(data) {
-    const generatedREADME = `# ${data.projectTitle}
+    const badgeLink = badgeRequest(data);
+    const generatedREADME = `${badgeLink}
+# ${data.projectTitle}
 
 ## Description
 
@@ -134,38 +133,35 @@ function badgeRequest(data) {
             badgeLink = "[![License](https://img.shields.io/badge/License-EPL_2.0-2C2255?style=for-the-badge)](https://opensource.org/license/epl-2-0/)";
             break;
         case "GNU Affero General Public License v3.0":
-            badgeLink = "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)";
+            badgeLink = "[![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)";
             break;
         case "GNU General Public License v2.0":
             badgeLink = "[![License: GPL v2](https://img.shields.io/badge/License-GPL_v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)";
             break;
         case "GNU Lesser General Public License v2.1":
-            badgeLink = "https://img.shields.io/badge/License-LGPL_v2.1-blue.svg";
+            badgeLink = "[![License](https://img.shields.io/badge/License-LGPL_v2.1-blue.svg)](https://www.gnu.org/licenses/old-licenses/lgpl-2.1.en.html)";
             break;
         case "Mozilla Public License 2.0":
             badgeLink = "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)";
             break;
         case "The Unlicense":
-            badgeLink = "[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)";
+            badgeLink = "[![License: Unlicense](https://img.shields.io/badge/License-Unlicense-blue.svg)](http://unlicense.org/)";
             break;
         default:
             badgeLink = ""
             break;
     }
-    return badgeLink
+    return badgeLink;
 }
 
-// TODO: Create a function to initialize app
 function init() {
     inquirer
     .prompt(questions)
     .then((response) => {
         const generatedREADME = constructREADME(response);
-        console.log(generatedREADME);
         writeToFile('professional-README.md', generatedREADME);
     })
 
 }
 
-// Function call to initialize app
 init();
