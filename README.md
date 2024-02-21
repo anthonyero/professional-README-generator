@@ -54,7 +54,7 @@ Once the installation instructions have been completed, the application can be u
 3. Upon completion of the final prompt, "Your email address", your `README.md` file will be exported to the downloaded directory with a file name "professional-README.md"
 4. Upon a successful export, the following text will be logged to the console: "Your professional README.md file has been exported!". If an error has occurred, an error message will be logged.
 
-- [Link to a Walkthrough Video]()
+- [Link to a Walkthrough Video](https://app.screencastify.com/v3/watch/DgCoADqlZ89i0H3B0fi0)
 
 - [Link to the GitHub repository](https://github.com/anthonyero/professional-README-generator)
 
@@ -75,4 +75,4 @@ This application utilizes the [Inquirer](https://www.npmjs.com/package/inquirer)
 
 N/A
 
-![Screenshot of ](/assets/images/)
+![Gif of Exported README.md File](/assets/images/Professional%20README%20Generator%20-%20Exported%20File%20Gif.gif)
