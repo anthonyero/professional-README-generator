@@ -67,7 +67,7 @@ Please refer to the commit history and branches within the repository for a trac
 
 ## Credits
 
-Initial starter code was provided by Northwestern University and edX through the Coding boot camp. Starter files were uploaded in the commit: "Added starter files to the repository".
+Initial starter code was provided by Northwestern University and edX through the Coding boot camp. Starter files were uploaded in the commit: "Initial commit - starter files".
 
 This application utilizes the [Inquirer](https://www.npmjs.com/package/inquirer) package and [Node.js](https://nodejs.org/en). The license badges utilized in the generated `README.md` files referenced [Lukas-h's license-badges.md gist GitHub page](https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba) and [MarkedDown's Licenses GitHub repository](https://github.com/MarkedDown/Licenses). Personal modifications were made to a select number badges and hyperlinks to documentation as appropriate. 
 
