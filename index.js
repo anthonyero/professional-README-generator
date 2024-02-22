@@ -8,7 +8,7 @@ const questions = [
         name: "projectTitle"
     },
     {
-        type: "input",
+        type: "editor",
         message: "Provide a description for your application:",
         name: "description"
     },
